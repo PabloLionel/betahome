@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>bbeta1.png</file>
+    <file>Logo_oficial_vector.png</file>
+  </qresource>
+</RCC>
