@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(802, 495)
+        Dialog.resize(797, 494)
         self.formLayoutWidget = QtWidgets.QWidget(Dialog)
         self.formLayoutWidget.setGeometry(QtCore.QRect(300, 250, 171, 25))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
@@ -69,6 +69,7 @@ class Ui_Dialog(object):
         self.verticalLayoutWidget.raise_()
 
         self.retranslateUi(Dialog)
+        self.pushButton.clicked.connect(self.lineEdit_2.clear)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
