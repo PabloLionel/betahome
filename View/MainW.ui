@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>601</height>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>801</width>
+    <height>601</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -59,11 +65,11 @@
       <x>0</x>
       <y>-1</y>
       <width>200</width>
-      <height>600</height>
+      <height>611</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(2, 31, 84);</string>
+     <string notr="true">background-color: #22272D;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -77,10 +83,10 @@
        <x>-1</x>
        <y>-1</y>
        <width>201</width>
-       <height>601</height>
+       <height>611</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0,0">
       <property name="spacing">
        <number>2</number>
       </property>
@@ -90,13 +96,17 @@
       <property name="topMargin">
        <number>0</number>
       </property>
+      <property name="rightMargin">
+       <number>1</number>
+      </property>
       <property name="bottomMargin">
        <number>200</number>
       </property>
       <item>
        <widget class="QFrame" name="frame_2">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 6px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -104,18 +114,99 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>6</x>
+           <y>20</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 87 10pt &quot;Roboto Black&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Saldo: $00000.00</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>10</y>
+           <width>35</width>
+           <height>35</height>
+          </rect>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">image: url(:/newPrefix/icons8-plus-48.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
        </widget>
       </item>
       <item>
        <widget class="QFrame" name="frame_3">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(230, 22, 16);</string>
+         <string notr="true">background-color: rgb(230, 22, 16);
+border-radius: 6px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>6</x>
+           <y>20</y>
+           <width>181</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);
+font: 87 10pt &quot;Roboto Black&quot;;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>Deuda: $00000.00</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <property name="indent">
+          <number>-1</number>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
@@ -136,8 +227,20 @@
           <height>65</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Roboto Medium</family>
+          <pointsize>14</pointsize>
+          <weight>7</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(8, 68, 164);
+         <string notr="true">background-color: rgb(107, 144, 153);
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
 border-radius: 6px;</string>
@@ -164,8 +267,11 @@ border-radius: 6px;</string>
           <height>65</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(8, 68, 164);
+         <string notr="true">background-color: rgb(107, 144, 153);
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
 border-radius: 6px;</string>
@@ -192,8 +298,11 @@ border-radius: 6px;</string>
           <height>65</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(8, 68, 164);
+         <string notr="true">background-color: rgb(107, 144, 153);
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
 border-radius: 6px;</string>
@@ -220,8 +329,11 @@ border-radius: 6px;</string>
           <height>65</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(8, 68, 164);
+         <string notr="true">background-color: rgb(107, 144, 153);
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
 border-radius: 6px;</string>
@@ -248,8 +360,11 @@ border-radius: 6px;</string>
           <height>65</height>
          </size>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(8, 68, 164);
+         <string notr="true">background-color: rgb(107, 144, 153);
 font: 57 14pt &quot;Roboto Medium&quot;;
 color: rgb(255, 255, 255);
 border-radius: 6px;</string>
