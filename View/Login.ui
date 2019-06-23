@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ingreso</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="login_frame">
@@ -132,7 +132,7 @@
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="Label_bienvenida">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -213,7 +213,7 @@ border-radius: 6px;</string>
       <string>Ingresa tu contraseña</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_ingreso">
+    <widget class="QPushButton" name="btn_ingreso_login">
      <property name="geometry">
       <rect>
        <x>350</x>
@@ -283,9 +283,9 @@ border-radius: 6px;</string>
     <zorder>label_2</zorder>
     <zorder>user_in</zorder>
     <zorder>label</zorder>
-    <zorder>label_3</zorder>
+    <zorder>Label_bienvenida</zorder>
     <zorder>pass_in</zorder>
-    <zorder>btn_ingreso</zorder>
+    <zorder>btn_ingreso_login</zorder>
    </widget>
   </widget>
  </widget>
