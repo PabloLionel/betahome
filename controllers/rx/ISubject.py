@@ -6,14 +6,17 @@
 # Original author: Betacode
 # 
 #######################################################
+from abc import ABCMeta, abstractmethod
 
+class ISubject(metaclass=ABCMeta):
+    """Interfaz que implementa las firmas
+    necesarias para un Sujeto.
+    """
+    @abstractmethod
+    def addObserver(self, o): return NotImplementedError
+    
+    @abstractmethod
+    def delObserver(self, o): return NotImplementedError
 
-class ISubject:
-    def addObserver(o):
-        pass
-
-    def delObserver(o):
-        pass
-
-    def notify():
-        pass
+    @abstractmethod
+    def notify(self, ): return NotImplementedError

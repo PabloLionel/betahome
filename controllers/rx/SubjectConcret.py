@@ -6,7 +6,25 @@
 # Original author: Betacode
 # 
 #######################################################
-from controllers.rx.SubjectAbstract import SubjectAbstract
+# para volver una carpeta atras, de lo contrario no veiramos a controllers
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('')))
+from Subject import Subject
 
-class SubjectConcret(SubjectAbstract):
-    pass
+class SubjectConcret(Subject):
+
+    def __init__(self):
+        self.__count = 0
+
+    # setters & getters
+    @property
+    def count(self):
+        return self.__count
+    @count.setter
+    def count(self, c):
+        self.__count = c
+        self.notify()
+        
+    def increment(self, inc=1):
+        self.count += inc
