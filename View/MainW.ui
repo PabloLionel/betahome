@@ -135,6 +135,16 @@ border-radius: 6px;</string>
          <property name="text">
           <string/>
          </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>icon_img/icons8-positive-48.png</normaloff>icon_img/icons8-positive-48.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
         </widget>
        </widget>
       </item>
@@ -234,7 +244,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-google-home-48.png</normaloff>icons8-google-home-48.png</iconset>
+          <normaloff>icon_img/icons8-google-home-48.png</normaloff>icon_img/icons8-google-home-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -275,7 +285,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-spreadsheet-48.png</normaloff>icons8-spreadsheet-48.png</iconset>
+          <normaloff>icon_img/icons8-spreadsheet-48.png</normaloff>icon_img/icons8-spreadsheet-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -316,7 +326,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-sorting-48.png</normaloff>icons8-sorting-48.png</iconset>
+          <normaloff>icon_img/icons8-sorting-48.png</normaloff>icon_img/icons8-sorting-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -357,7 +367,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-statistics-48.png</normaloff>icons8-statistics-48.png</iconset>
+          <normaloff>icon_img/icons8-statistics-48.png</normaloff>icon_img/icons8-statistics-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -398,7 +408,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-doughnut-chart-48.png</normaloff>icons8-doughnut-chart-48.png</iconset>
+          <normaloff>icon_img/icons8-doughnut-chart-48.png</normaloff>icon_img/icons8-doughnut-chart-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -451,7 +461,7 @@ border-radius: 6px;</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>icons8-help-48.png</normaloff>icons8-help-48.png</iconset>
+          <normaloff>icon_img/icons8-help-48.png</normaloff>icon_img/icons8-help-48.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -807,12 +817,12 @@ border-radius: 6px;</string>
     </widget>
    </widget>
    <zorder>menu_frame</zorder>
-   <zorder>inicio_frame</zorder>
    <zorder>resumen_frame</zorder>
    <zorder>categorias_frame</zorder>
    <zorder>historial_frame</zorder>
    <zorder>estadisticas_frame</zorder>
    <zorder>ayuda_frame</zorder>
+   <zorder>inicio_frame</zorder>
   </widget>
  </widget>
  <resources>

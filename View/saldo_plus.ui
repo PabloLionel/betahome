@@ -178,6 +178,22 @@ border-radius: 6px;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>140</y>
+       <width>70</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 25 10pt &quot;Roboto Thin&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Sueldo</string>
+     </property>
+    </widget>
    </widget>
    <zorder>widget</zorder>
    <zorder>widget_2</zorder>
