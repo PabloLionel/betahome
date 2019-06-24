@@ -10,6 +10,12 @@
     <height>250</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>350</width>
+    <height>250</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>350</width>
@@ -41,25 +47,6 @@
     <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 6px;</string>
    </property>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>310</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 25 16pt &quot;Roboto Thin&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Ingresa un monto</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton_aceptar_ingreso_saldo">
     <property name="geometry">
      <rect>
@@ -70,7 +57,7 @@ border-radius: 6px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(107, 144, 153);
+     <string notr="true">background-color: #6b778d;
 border-radius: 6px;
 font: 87 8pt &quot;Roboto Black&quot;;
 color: rgb(255, 255, 255);</string>
@@ -92,10 +79,10 @@ color: rgb(255, 255, 255);</string>
      <string notr="true">border-radius: 6px;
 background-color: rgb(255, 255, 255);
 font: 87 8pt &quot;Roboto Black&quot;;
-color: rgb(107, 144, 153);
+color: #6b778d;
 border-width: 2px;
 border-style: solid;
-border-color: rgb(107, 144, 153);</string>
+border-color:#6b778d;</string>
     </property>
     <property name="text">
      <string>Cancelar</string>
@@ -111,7 +98,7 @@ border-color: rgb(107, 144, 153);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #22272D;</string>
+     <string notr="true">background-color: #17223b;</string>
     </property>
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
@@ -130,9 +117,9 @@ border-radius: 6px;</string>
     <widget class="QLineEdit" name="campo_ingreso_saldo">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>50</x>
        <y>100</y>
-       <width>260</width>
+       <width>240</width>
        <height>30</height>
       </rect>
      </property>
@@ -145,7 +132,7 @@ border-radius: 6px;</string>
      <property name="styleSheet">
       <string notr="true">font: 12pt &quot;Roboto Light&quot;;
 background-color: rgb(255, 255, 255);
-border-color: rgb(2, 31, 84);
+border-color:#6b778d;
 border-style: solid;
 border-width: 2px;
 border-radius: 6px;</string>
@@ -172,10 +159,28 @@ border-radius: 6px;</string>
       <string>$00000.00</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>310</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 25 16pt &quot;Roboto Thin&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Ingresá un monto</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
    <zorder>widget</zorder>
    <zorder>widget_2</zorder>
-   <zorder>label</zorder>
    <zorder>pushButton_aceptar_ingreso_saldo</zorder>
    <zorder>pushButton_cancelar_ingreso_saldo</zorder>
   </widget>

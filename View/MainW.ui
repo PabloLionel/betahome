@@ -7,13 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>599</height>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>801</width>
-    <height>601</height>
+    <width>800</width>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -492,7 +498,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -549,7 +555,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -606,7 +612,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -663,7 +669,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -720,7 +726,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -777,7 +783,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -801,16 +807,113 @@ border-radius: 6px;</string>
     </widget>
    </widget>
    <zorder>menu_frame</zorder>
+   <zorder>inicio_frame</zorder>
    <zorder>resumen_frame</zorder>
+   <zorder>categorias_frame</zorder>
    <zorder>historial_frame</zorder>
    <zorder>estadisticas_frame</zorder>
-   <zorder>categorias_frame</zorder>
    <zorder>ayuda_frame</zorder>
-   <zorder>inicio_frame</zorder>
   </widget>
  </widget>
  <resources>
   <include location="Img.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_Inicio</sender>
+   <signal>clicked()</signal>
+   <receiver>inicio_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>146</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Resumen</sender>
+   <signal>clicked()</signal>
+   <receiver>resumen_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>209</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>210</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Categorias</sender>
+   <signal>clicked()</signal>
+   <receiver>categorias_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Historial</sender>
+   <signal>clicked()</signal>
+   <receiver>historial_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>214</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Estadisticas</sender>
+   <signal>clicked()</signal>
+   <receiver>estadisticas_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_Ayuda</sender>
+   <signal>clicked()</signal>
+   <receiver>ayuda_frame</receiver>
+   <slot>raise()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>431</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
