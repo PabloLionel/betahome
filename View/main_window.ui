@@ -508,7 +508,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -565,7 +565,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -622,7 +622,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -679,7 +679,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -736,7 +736,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -793,7 +793,7 @@ border-radius: 6px;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector_bl.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector_bl.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -817,17 +817,15 @@ border-radius: 6px;</string>
     </widget>
    </widget>
    <zorder>menu_frame</zorder>
+   <zorder>inicio_frame</zorder>
    <zorder>resumen_frame</zorder>
    <zorder>categorias_frame</zorder>
    <zorder>historial_frame</zorder>
    <zorder>estadisticas_frame</zorder>
    <zorder>ayuda_frame</zorder>
-   <zorder>inicio_frame</zorder>
   </widget>
  </widget>
- <resources>
-  <include location="Img.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>pushButton_Inicio</sender>

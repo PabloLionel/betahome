@@ -98,7 +98,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/bbeta1.png</pixmap>
+      <pixmap>beta_img/bbeta1.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -132,7 +132,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="Img.qrc">:/newPrefix/Logo_oficial_vector.png</pixmap>
+      <pixmap>beta_img/Logo_oficial_vector.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -295,8 +295,6 @@ border-radius: 6px;</string>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="Img.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
