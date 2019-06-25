@@ -6,7 +6,6 @@
 # Original author: Betacode
 # 
 #######################################################
-from DriverDB import DriverDB
 
 class IConectorAdapter:
 
