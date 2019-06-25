@@ -6,12 +6,11 @@
 # Original author: Betacode
 # 
 #######################################################
-from controllers.rx.IObserver import IObserver
-from controllers.UserController import UserController
+from rx.IObserver import IObserver
+from UserController import UserController
 
 class UserChangeObserver(IObserver):
-    m_UserController= UserController()
-
+    state_UserController= UserController()
 
     def update():
         pass

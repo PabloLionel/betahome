@@ -6,7 +6,11 @@
 # Original author: Betacode
 # 
 #######################################################
-from models.DB.DriverDB import DriverDB
+from DriverDB import DriverDB
 
 class IConectorAdapter:
-    m_DriverDB= DriverDB()
+
+    def __init__(self):
+        pass
+
+

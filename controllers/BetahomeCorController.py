@@ -6,11 +6,8 @@
 # Original author: Betacode
 # 
 #######################################################
-from controllers.UserController import UserController
 
 class BetahomeCorController:
-    m_UserController= UserController()
-
 
     def checkUser():
         pass

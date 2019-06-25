@@ -22,17 +22,23 @@ class ObserverConcret(IObserver):
         self.subjectState = subject
     
     def update(self):
-        print(self.subjectState.__dict__)
+        print(self, self.subjectState.__dict__)
 
 if __name__ == "__main__":
     sujeto = SubjectConcret()
-    observer1 = ObserverConcret(sujeto)
 
-    sujeto.increment()
-    sujeto.increment()
+    observer1 = ObserverConcret(sujeto)
+    observer2 = ObserverConcret(sujeto)
+
+    sujeto.increment() # 1
+    sujeto.increment() # 2
 
     sujeto.addObserver(observer1)
 
-    sujeto.increment()
-    sujeto.increment()
-    sujeto.increment()
+    sujeto.increment() # (obs1, {...__count: 3})
+    sujeto.increment() # (obs1, {...__count: 4})
+
+    sujeto.addObserver(observer2)
+    
+    sujeto.increment() # (obs1, {...__count: 5}) (obs2, {...__count: 5})
+    sujeto.increment() # (obs1, {...__count: 6}) (obs2, {...__count: 6})

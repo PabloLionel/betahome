@@ -12,6 +12,11 @@ from models.IDao import IDao
 class UserModel(DriverDB, IDao):
     __MAX_PASSWORD = 20
     __MIN_PASSWORD = 8
+
+    def __init__(self, name, pwd):
+        self.nameuser = name
+        self.password = pwd
+
     def __getState():
         pass
 

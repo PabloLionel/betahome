@@ -6,38 +6,28 @@
 # Original author: Betacode
 # 
 #######################################################
-from controllers.rx.SubjectAbstract import SubjectAbstract
+from rx.Subject import Subject
 
-class UserController(SubjectAbstract):
-    def create(user):
+
+class UserController(Subject):
+
+    def __init__(self, user):
+        self.usermodel = user    
+
+    def create(): # crear
         pass
 
-    def delete(id):
+    def find(filter=lambda x: x): # leer
         pass
 
-    def find(filter, user):
+    def update(user): # actualizar
         pass
 
-    def login(user):
+    def delete(id=None): # eliminar
+        pass
+
+    def login():
         pass
 
     def logout():
-        pass
-
-    def update(user):
-        pass
-
-    def create(user):
-        pass
-
-    def delete(id):
-        pass
-
-    def find(filter, user):
-        pass
-
-    def login(user):
-        pass
-
-    def update(user):
         pass

@@ -9,14 +9,18 @@
 
 
 class IDao:
-    def create():
+
+    def __init__(self):
         pass
 
-    def delete():
+    def create(self):
         pass
 
-    def find(filter):
+    def update(self):
         pass
 
-    def update():
+    def find(self, filter):
+        pass
+
+    def delete(self):
         pass

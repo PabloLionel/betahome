@@ -19,4 +19,4 @@ class ISubject(metaclass=ABCMeta):
     def delObserver(self, o): return NotImplementedError
 
     @abstractmethod
-    def notify(self, ): return NotImplementedError
+    def notify(self): return NotImplementedError

@@ -9,6 +9,10 @@
 from models.DB.IConectorAdapter import IConectorAdapter
 
 class DriverDB:
+
+    def __init__(self):
+        pass
+
     def __getState():
         pass
 
