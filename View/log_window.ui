@@ -141,9 +141,9 @@
     <widget class="QLabel" name="Label_bienvenida">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>-1</x>
        <y>220</y>
-       <width>520</width>
+       <width>801</width>
        <height>56</height>
       </rect>
      </property>
@@ -172,6 +172,9 @@ font: 57 38pt &quot;Roboto Black&quot;;
      </property>
      <property name="scaledContents">
       <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="pass_in">
