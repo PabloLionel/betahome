@@ -6,7 +6,16 @@
 # Original author: Betacode
 # 
 #######################################################
+import sys
+import os
+print(os.path.dirname('.'))
 import sqlite3 as sq3
+
+# sys.path.append(os.path.dirname(os.path.abspath('models/db')))
+# from IConectorAdapter import IConectorAdapter
+# import sys
+# for dir in sys.path:
+#     print(dir)
 
 class DriverDB:
 
@@ -31,17 +40,17 @@ class DriverDB:
     def cursor(self, c):
         self.__cursor = c
 
-    def funcname(parameter_list):
+    def funcname(self, parameter_list):
         pass
 
-    def __getState():
+    def __getState(self, ):
         pass
 
-    def __getType(value):
+    def __getType(self, value):
         pass
 
-    def __parserType(type):
+    def __parserType(self, type):
         pass
 
-    def save():
+    def save(self, ):
         pass
