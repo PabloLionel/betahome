@@ -171,7 +171,7 @@ border-radius: 6px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(255, 255, 255);
-font: 87 10pt &quot;Roboto Black&quot;;</string>
+font: 87 12pt &quot;Roboto Black&quot;;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -571,20 +571,324 @@ border-radius: 6px;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="QTableWidget" name="tabla_cuentas">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>40</y>
-       <width>51</width>
-       <height>16</height>
+       <x>25</x>
+       <y>31</y>
+       <width>551</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Roboto</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustIgnored</enum>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>false</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideMiddle</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>130</number>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderStretchLastSection">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Cuenta</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>107</red>
+        <green>119</green>
+        <blue>141</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Categoría</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>107</red>
+        <green>119</green>
+        <blue>141</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Monto</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>107</red>
+        <green>119</green>
+        <blue>141</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Pagar</string>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto Black</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="textAlignment">
+       <set>AlignCenter</set>
+      </property>
+      <property name="background">
+       <color>
+        <red>107</red>
+        <green>119</green>
+        <blue>141</blue>
+       </color>
+      </property>
+      <property name="foreground">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>255</red>
+         <green>255</green>
+         <blue>255</blue>
+        </color>
+       </brush>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="pushButton_ing_cuenta_nueva">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>550</y>
+       <width>111</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 87 8pt &quot;Roboto Black&quot;;</string>
+      <string notr="true">color:#ffffff;
+font: 87 10pt &quot;Roboto Black&quot;;
+border-width: 2px;
+border-style: solid;
+border-radius:6px;
+background-color: rgb(255, 103, 104);
+</string>
      </property>
      <property name="text">
-      <string>RESUMEN</string>
+      <string>Ingresar Cuenta</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_ing_cuenta_nueva_2">
+     <property name="geometry">
+      <rect>
+       <x>115</x>
+       <y>560</y>
+       <width>35</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/newPrefix/icons8-positive-48.png);
+background-color: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icon_img/icons8-positive-48.png</normaloff>icon_img/icons8-positive-48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_pagar_selec">
+     <property name="geometry">
+      <rect>
+       <x>464</x>
+       <y>550</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#ffffff;
+font: 87 10pt &quot;Roboto Black&quot;;
+border-width: 2px;
+border-style: solid;
+border-radius:6px;
+background-color: rgb(255, 103, 104);
+</string>
+     </property>
+     <property name="text">
+      <string>Pagar Selección</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_pagar_selec_2">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>560</y>
+       <width>35</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/newPrefix/icons8-positive-48.png);
+background-color: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icon_img/icons8-us-dollar-30.png</normaloff>icon_img/icons8-us-dollar-30.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
      </property>
     </widget>
    </widget>
@@ -816,13 +1120,13 @@ border-radius: 6px;</string>
      </property>
     </widget>
    </widget>
-   <zorder>menu_frame</zorder>
    <zorder>inicio_frame</zorder>
-   <zorder>resumen_frame</zorder>
    <zorder>categorias_frame</zorder>
    <zorder>historial_frame</zorder>
    <zorder>estadisticas_frame</zorder>
    <zorder>ayuda_frame</zorder>
+   <zorder>menu_frame</zorder>
+   <zorder>resumen_frame</zorder>
   </widget>
  </widget>
  <resources/>
