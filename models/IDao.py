@@ -6,21 +6,18 @@
 # Original author: Betacode
 # 
 #######################################################
+from abc import ABCMeta, abstractmethod
 
+class IDataAccessObject(metaclass=ABCMeta):
 
-class IDao:
+    @abstractmethod
+    def create(self): return NotImplementedError
 
-    def __init__(self):
-        pass
+    @abstractmethod
+    def update(self): return NotImplementedError
 
-    def create(self):
-        pass
+    @abstractmethod
+    def find(self, filter): return NotImplementedError
 
-    def update(self):
-        pass
-
-    def find(self, filter):
-        pass
-
-    def delete(self):
-        pass
+    @abstractmethod
+    def delete(self): return NotImplementedError

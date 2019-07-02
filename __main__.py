@@ -6,7 +6,7 @@
 # Original author: Betacode
 # 
 #######################################################
-
+from models.models import DataAccessObject
 
 if __name__ == "__main__":
-    pass
+    dao = DataAccessObject()

@@ -14,20 +14,20 @@ class UserController(Subject):
     def __init__(self, user):
         self.usermodel = user    
 
-    def create(): # crear
+    def create(self): # crear
         pass
 
-    def find(filter=lambda x: x): # leer
+    def find(self,filter=lambda x: x): # leer
         pass
 
-    def update(user): # actualizar
+    def update(self,user): # actualizar
         pass
 
-    def delete(id=None): # eliminar
+    def delete(self,id=None): # eliminar
         pass
 
-    def login():
+    def login(self):
         pass
 
-    def logout():
+    def logout(self):
         pass
