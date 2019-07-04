@@ -6,12 +6,12 @@
 # Original author: Betacode
 # 
 #######################################################
-from rx.Subject import Subject
+from .rx.Subject import Subject
 
 
 class UserController(Subject):
 
-    def __init__(self, user):
+    def __init__(self, user=None):
         self.usermodel = user    
 
     def create(self): # crear

@@ -6,10 +6,9 @@
 # Original author: Betacode
 # 
 #######################################################
-from db.DriverDB import DriverDB
-from IDao import IDao
+from .models import DataAccessObject
 
-class UserModel(DriverDB, IDao):
+class UserModel(DataAccessObject):
     __MAX_PASSWORD = 20
     __MIN_PASSWORD = 8
 
@@ -18,27 +17,24 @@ class UserModel(DriverDB, IDao):
         self.password = pwd
         self.saldo = saldo
 
-    def __getState():
+    def create(self, ):
         pass
 
-    def create():
-        pass
-
-    def delete():
+    def delete(self, ):
         pass
 
     def find(filter):
         pass
 
-    def isRegisterUser(nameuser):
+    def isRegisterUser(self, nameuser):
         """+ isRegisterUser(nameuser: str): bool
         """
         pass
 
-    def singUp():
+    def singUp(self, ):
         pass
 
-    def update():
+    def update(self, ):
         pass
     
     def __str__(self):

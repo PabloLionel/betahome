@@ -7,13 +7,17 @@
 # 
 #######################################################
 
-class BetahomeCorController:
+class BetahomeCoreController:
+    
+    def __init__(self):
+        self.user = None
+        self.dao=None
 
-    def checkUser():
+    def checkUser(self):
+        return bool(self.user)
+
+    def close(self):
         pass
 
-    def close():
-        pass
-
-    def open():
+    def open(self):
         pass
