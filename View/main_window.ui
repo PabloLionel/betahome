@@ -72,7 +72,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_Menu" stretch="0,0,0,0,0,0,0,0,0">
       <property name="spacing">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="sizeConstraint">
        <enum>QLayout::SetMaximumSize</enum>
@@ -292,6 +292,9 @@ border-radius: 6px;</string>
           <width>30</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -577,7 +580,7 @@ border-radius: 6px;</string>
        <x>25</x>
        <y>31</y>
        <width>551</width>
-       <height>521</height>
+       <height>511</height>
       </rect>
      </property>
      <property name="font">
@@ -596,13 +599,18 @@ border-radius: 6px;</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: transparent;</string>
+      <string notr="true">background-color: transparent;
+border-color:#6b778d;
+border-style: solid;
+border-width: 1px;
+border-radius: 4px;
+</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
+      <enum>QFrame::Box</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
+      <enum>QFrame::Raised</enum>
      </property>
      <property name="lineWidth">
       <number>1</number>
@@ -638,21 +646,30 @@ border-radius: 6px;</string>
       <bool>false</bool>
      </property>
      <property name="gridStyle">
-      <enum>Qt::SolidLine</enum>
+      <enum>Qt::NoPen</enum>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
      </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
      <attribute name="horizontalHeaderCascadingSectionResizes">
       <bool>false</bool>
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>130</number>
      </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>130</number>
+     </attribute>
      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
       <bool>true</bool>
      </attribute>
      <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
       <bool>true</bool>
      </attribute>
      <attribute name="verticalHeaderCascadingSectionResizes">
@@ -679,17 +696,17 @@ border-radius: 6px;</string>
       </property>
       <property name="background">
        <color>
-        <red>107</red>
-        <green>119</green>
-        <blue>141</blue>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
        </color>
       </property>
       <property name="foreground">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
          <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <green>103</green>
+         <blue>104</blue>
         </color>
        </brush>
       </property>
@@ -709,17 +726,17 @@ border-radius: 6px;</string>
       </property>
       <property name="background">
        <color>
-        <red>107</red>
-        <green>119</green>
-        <blue>141</blue>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
        </color>
       </property>
       <property name="foreground">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
          <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <green>103</green>
+         <blue>104</blue>
         </color>
        </brush>
       </property>
@@ -739,17 +756,17 @@ border-radius: 6px;</string>
       </property>
       <property name="background">
        <color>
-        <red>107</red>
-        <green>119</green>
-        <blue>141</blue>
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
        </color>
       </property>
       <property name="foreground">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
          <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <green>103</green>
+         <blue>104</blue>
         </color>
        </brush>
       </property>
@@ -768,18 +785,18 @@ border-radius: 6px;</string>
        <set>AlignCenter</set>
       </property>
       <property name="background">
-       <color>
-        <red>107</red>
-        <green>119</green>
-        <blue>141</blue>
+       <color alpha="200">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
        </color>
       </property>
       <property name="foreground">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
          <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <green>103</green>
+         <blue>104</blue>
         </color>
        </brush>
       </property>
@@ -791,8 +808,11 @@ border-radius: 6px;</string>
        <x>20</x>
        <y>550</y>
        <width>111</width>
-       <height>31</height>
+       <height>30</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">color:#ffffff;
@@ -807,45 +827,17 @@ background-color: rgb(255, 103, 104);
       <string>Ingresar Cuenta</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_ing_cuenta_nueva_2">
-     <property name="geometry">
-      <rect>
-       <x>115</x>
-       <y>560</y>
-       <width>35</width>
-       <height>35</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/icons8-positive-48.png);
-background-color: transparent;
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>icon_img/icons8-positive-48.png</normaloff>icon_img/icons8-positive-48.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>30</width>
-       <height>30</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_pagar_selec">
      <property name="geometry">
       <rect>
        <x>464</x>
        <y>550</y>
        <width>111</width>
-       <height>31</height>
+       <height>30</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">color:#ffffff;
@@ -860,35 +852,45 @@ background-color: rgb(255, 103, 104);
       <string>Pagar Selección</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_pagar_selec_2">
+    <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>560</x>
+       <x>118</x>
        <y>560</y>
-       <width>35</width>
-       <height>35</height>
+       <width>30</width>
+       <height>30</height>
       </rect>
      </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/icons8-positive-48.png);
-background-color: transparent;
-</string>
+      <string notr="true">background-color: transparent;</string>
      </property>
      <property name="text">
       <string/>
      </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>icon_img/icons8-us-dollar-30.png</normaloff>icon_img/icons8-us-dollar-30.png</iconset>
+     <property name="pixmap">
+      <pixmap>icon_img/icons8-positive-48.png</pixmap>
      </property>
-     <property name="iconSize">
-      <size>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>563</x>
+       <y>560</y>
        <width>30</width>
        <height>30</height>
-      </size>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>icon_img/icons8-us-dollar-30.png</pixmap>
      </property>
     </widget>
    </widget>

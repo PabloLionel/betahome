@@ -162,9 +162,9 @@ border-radius: 6px;</string>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>40</y>
-       <width>310</width>
+       <width>331</width>
        <height>30</height>
       </rect>
      </property>
@@ -178,11 +178,11 @@ border-radius: 6px;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QCheckBox" name="checkBox_sueldo">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>140</y>
+       <x>140</x>
+       <y>160</y>
        <width>70</width>
        <height>17</height>
       </rect>
@@ -192,6 +192,26 @@ border-radius: 6px;</string>
      </property>
      <property name="text">
       <string>Sueldo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_ingreso_incorrecto_saldo">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>130</y>
+       <width>331</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 25 10pt &quot;Roboto Light&quot;;
+color:  rgb(255, 103, 104);</string>
+     </property>
+     <property name="text">
+      <string>* Ingresá un monto válido!</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
