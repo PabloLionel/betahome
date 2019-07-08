@@ -154,11 +154,11 @@ class DriverDB:
                 self.save()
             return c.fetchall() if q.get_all else c.fetchone()
         except sq3.IntegrityError as e:
-            raise '[ Error ]' + str(e)
+            raise '[ Error ] {}'.format(e)
         except sq3.OperationalError as e:
-            raise '[ Error ]' + str(e)
+            raise '[ Error ] {}'.format(e)
         except sq3.ProgrammingError as e:
-            raise '[ Error ]' + str(e)
+            raise '[ Error ] {}'.format(e)
         except: # catch *all* exceptions
             e = sys.exc_info()[0]
             raise e

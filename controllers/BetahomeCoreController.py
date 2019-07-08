@@ -15,16 +15,16 @@ class BetahomeCoreController:
         self.user = UserController(model.user)
 
     def checkUser(self):
-        return bool(self.view.user and self.model.user)
+        return bool(self.user.usermodel)
 
     def close(self):
         pass
 
     def open(self):
         if self.checkUser():
-            pass
-        else: 
-            self.view.loadUser()
+            self.view.init(False, self.user)
+        else:
+            self.view.init(True, self.user)
 
     # def getUserData(self, *args, **kwargs):
     #     pass
