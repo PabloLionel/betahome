@@ -66,7 +66,7 @@
       <rect>
        <x>-1</x>
        <y>-1</y>
-       <width>201</width>
+       <width>202</width>
        <height>611</height>
       </rect>
      </property>
@@ -108,7 +108,7 @@ border-radius: 6px;</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 87 10pt &quot;Roboto Black&quot;;</string>
+          <string notr="true">font: 87 11pt &quot;Roboto Black&quot;;</string>
          </property>
          <property name="text">
           <string>Saldo: $00000.00</string>
@@ -237,7 +237,9 @@ font: 87 12pt &quot;Roboto Black&quot;;</string>
          <string notr="true">background-color: #6b778d;
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Inicio</string>
@@ -278,7 +280,9 @@ border-radius: 6px;</string>
          <string notr="true">background-color: #6b778d;
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Resumen</string>
@@ -322,7 +326,9 @@ border-radius: 6px;</string>
          <string notr="true">background-color: #6b778d;
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Categorías</string>
@@ -363,7 +369,9 @@ border-radius: 6px;</string>
          <string notr="true">background-color: #6b778d;
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Historial</string>
@@ -404,7 +412,9 @@ border-radius: 6px;</string>
          <string notr="true">background-color: #6b778d;
 color: rgb(255, 255, 255);
 font: 57 14pt &quot;Roboto Medium&quot;;
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Estadísticas</string>
@@ -457,7 +467,9 @@ border-radius: 6px;</string>
          <string notr="true">background-color: #6b778d;
 font: 57 14pt &quot;Roboto Medium&quot;;
 color: rgb(255, 255, 255);
-border-radius: 6px;</string>
+border-radius: 6px;
+text-align: left; 
+padding-left: 30px;</string>
         </property>
         <property name="text">
          <string>Ayuda</string>
@@ -670,7 +682,7 @@ border-radius: 4px;
       <bool>true</bool>
      </attribute>
      <attribute name="verticalHeaderVisible">
-      <bool>true</bool>
+      <bool>false</bool>
      </attribute>
      <attribute name="verticalHeaderCascadingSectionResizes">
       <bool>false</bool>

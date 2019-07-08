@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Form_saldo</class>
+ <widget class="QWidget" name="Form_saldo">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -56,6 +56,9 @@ border-radius: 6px;</string>
       <height>25</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: #6b778d;
 border-radius: 6px;
@@ -74,6 +77,9 @@ color: rgb(255, 255, 255);</string>
       <width>75</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius: 6px;
@@ -101,7 +107,7 @@ border-color:#6b778d;</string>
      <string notr="true">background-color: #17223b;</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget_2" native="true">
+   <widget class="QWidget" name="widget_saldo_mas" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -216,7 +222,7 @@ color:  rgb(255, 103, 104);</string>
     </widget>
    </widget>
    <zorder>widget</zorder>
-   <zorder>widget_2</zorder>
+   <zorder>widget_saldo_mas</zorder>
    <zorder>pushButton_aceptar_ingreso_saldo</zorder>
    <zorder>pushButton_cancelar_ingreso_saldo</zorder>
   </widget>

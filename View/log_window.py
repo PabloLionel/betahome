@@ -55,7 +55,7 @@ class Ui_MainWindow(object):
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.Label_bienvenida = QtWidgets.QLabel(self.login_frame)
-        self.Label_bienvenida.setGeometry(QtCore.QRect(0, 140, 375, 55))
+        self.Label_bienvenida.setGeometry(QtCore.QRect(0, 130, 375, 55))
         font = QtGui.QFont()
         font.setFamily("Roboto Black")
         font.setPointSize(20)
@@ -81,12 +81,11 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pass_in.sizePolicy().hasHeightForWidth())
         self.pass_in.setSizePolicy(sizePolicy)
         self.pass_in.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.pass_in.setStyleSheet("font: 11pt \"Roboto Light\";\n"
-"background-color: rgb(255, 255, 255);\n"
-"border-color: rgb(2, 31, 84);\n"
-"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-radius: 6px;")
+        self.pass_in.setStyleSheet("font: 12pt \"Roboto\";\n"
+"background-color: transparent;\n"
+"border-bottom: 1px white;\n"
+"color: white;\n"
+"border-style: solid;")
         self.pass_in.setInputMethodHints(QtCore.Qt.ImhHiddenText|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhNoPredictiveText|QtCore.Qt.ImhSensitiveData)
         self.pass_in.setInputMask("")
         self.pass_in.setMaxLength(20)
@@ -110,12 +109,11 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.user_in.sizePolicy().hasHeightForWidth())
         self.user_in.setSizePolicy(sizePolicy)
         self.user_in.setFocusPolicy(QtCore.Qt.ClickFocus)
-        self.user_in.setStyleSheet("font: 11pt \"Roboto Light\";\n"
-"background-color: rgb(255, 255, 255);\n"
-"border-color: rgb(2, 31, 84);\n"
-"border-style: solid;\n"
-"border-width: 2px;\n"
-"border-radius: 6px;")
+        self.user_in.setStyleSheet("font: 12pt \"Roboto\";\n"
+"background-color: transparent;\n"
+"border-bottom: 1px white;\n"
+"color: white;\n"
+"border-style: solid;")
         self.user_in.setInputMethodHints(QtCore.Qt.ImhNone)
         self.user_in.setInputMask("")
         self.user_in.setMaxLength(15)

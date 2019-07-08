@@ -9,14 +9,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(350, 250)
-        Form.setMinimumSize(QtCore.QSize(350, 250))
-        Form.setMaximumSize(QtCore.QSize(350, 250))
-        Form.setStyleSheet("border-radius:4px;")
-        self.widget_agregar_saldo = QtWidgets.QWidget(Form)
+class Ui_Form_saldo(object):
+    def setupUi(self, Form_saldo):
+        Form_saldo.setObjectName("Form_saldo")
+        Form_saldo.resize(350, 250)
+        Form_saldo.setMinimumSize(QtCore.QSize(350, 250))
+        Form_saldo.setMaximumSize(QtCore.QSize(350, 250))
+        Form_saldo.setStyleSheet("border-radius:4px;")
+        self.widget_agregar_saldo = QtWidgets.QWidget(Form_saldo)
         self.widget_agregar_saldo.setGeometry(QtCore.QRect(0, 0, 350, 250))
         self.widget_agregar_saldo.setMaximumSize(QtCore.QSize(350, 250))
         self.widget_agregar_saldo.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -88,18 +88,18 @@ class Ui_Form(object):
         self.pushButton_aceptar_ingreso_saldo.raise_()
         self.pushButton_cancelar_ingreso_saldo.raise_()
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Form_saldo)
+        QtCore.QMetaObject.connectSlotsByName(Form_saldo)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, Form_saldo):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Ingreso de saldo"))
-        self.pushButton_aceptar_ingreso_saldo.setText(_translate("Form", "Aceptar"))
-        self.pushButton_cancelar_ingreso_saldo.setText(_translate("Form", "Cancelar"))
-        self.campo_ingreso_saldo.setPlaceholderText(_translate("Form", "$00000.00"))
-        self.label.setText(_translate("Form", "Ingresá un monto"))
-        self.checkBox_sueldo.setText(_translate("Form", "Sueldo"))
-        self.label_ingreso_incorrecto_saldo.setText(_translate("Form", "* Ingresá un monto válido!"))
+        Form_saldo.setWindowTitle(_translate("Form_saldo", "Ingreso de saldo"))
+        self.pushButton_aceptar_ingreso_saldo.setText(_translate("Form_saldo", "Aceptar"))
+        self.pushButton_cancelar_ingreso_saldo.setText(_translate("Form_saldo", "Cancelar"))
+        self.campo_ingreso_saldo.setPlaceholderText(_translate("Form_saldo", "$00000.00"))
+        self.label.setText(_translate("Form_saldo", "Ingresá un monto"))
+        self.checkBox_sueldo.setText(_translate("Form_saldo", "Sueldo"))
+        self.label_ingreso_incorrecto_saldo.setText(_translate("Form_saldo", "* Ingresá un monto válido!"))
 
 
 
@@ -107,8 +107,8 @@ class Ui_Form(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    Form_saldo = QtWidgets.QWidget()
+    ui = Ui_Form_saldo()
+    ui.setupUi(Form_saldo)
+    Form_saldo.show()
     sys.exit(app.exec_())
