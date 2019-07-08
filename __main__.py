@@ -6,7 +6,16 @@
 # Original author: Betacode
 # 
 #######################################################
-from .models.models import DataAccessObject
+from controllers.BetahomeCoreController import BetahomeCoreController
+from view.view import View
+from models.models import Model
 
+def main():
+    # MyClass(new View(), new Model())
+    core = BetahomeCoreController(
+        View(),
+        Model()
+    )
+    core.open()
 if __name__ == "__main__":
-    dao = DataAccessObject()
+    main()

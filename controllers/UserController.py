@@ -8,23 +8,24 @@
 #######################################################
 from .rx.Subject import Subject
 
-
 class UserController(Subject):
 
     def __init__(self, user=None):
-        self.usermodel = user    
+        self.usermodel = user
 
     def create(self): # crear
-        pass
+        if not self.usermodel:
+            self.usermodel.create()
+
+    def update(self): # actualizar
+        
+        self.usermodel.update()
 
     def find(self,filter=lambda x: x): # leer
-        pass
+        self.usermodel.find(filter)
 
-    def update(self,user): # actualizar
-        pass
-
-    def delete(self,id=None): # eliminar
-        pass
+    def delete(self): # eliminar
+        self.usermodel.delete()
 
     def login(self):
         pass

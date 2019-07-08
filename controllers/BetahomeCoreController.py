@@ -6,18 +6,25 @@
 # Original author: Betacode
 # 
 #######################################################
+from .UserController import UserController
 
 class BetahomeCoreController:
-    
-    def __init__(self):
-        self.user = None
-        self.dao=None
+
+    def __init__(self, view, model):
+        self.view = view
+        self.user = UserController(model.user)
 
     def checkUser(self):
-        return bool(self.user)
+        return bool(self.view.user and self.model.user)
 
     def close(self):
         pass
 
     def open(self):
-        pass
+        if self.checkUser():
+            pass
+        else: 
+            self.view.loadUser()
+
+    # def getUserData(self, *args, **kwargs):
+    #     pass
