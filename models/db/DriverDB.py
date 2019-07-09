@@ -12,7 +12,7 @@ import sys
 import sqlite3 as sq3
 
 class Adapter:
-    def __init__(self, namedb=":memory:"):
+    def __init__(self, namedb="betahome.db"):
         self.__conn=sq3.connect(namedb)
         self.__cursor=self.__conn.cursor()
 

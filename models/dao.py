@@ -29,7 +29,8 @@ class DataAccessObject(IDataAccessObject):
             Query(
                 f'INSERT INTO {table_name} (' + ','.join(kwargs.keys()) + ') VALUES (' + ','.join(['?' for _ in kwargs]) + ')',
                 data=tuple(kwargs.values()),
-                get_all=False
+                get_all=False,
+                save=True
             )
         )
     

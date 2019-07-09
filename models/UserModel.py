@@ -14,9 +14,6 @@ except:
     from db.Query import Query
 
 class UserModel(DataAccessObject):
-    __MAX_PASSWORD = 20
-    __MIN_PASSWORD = 8
-
     def __init__(self, name, pwd, salary, *args, **kwargs):
         DataAccessObject.__init__(self)
         self.init()

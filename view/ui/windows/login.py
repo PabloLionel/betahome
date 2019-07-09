@@ -105,8 +105,8 @@ class Login(QMainWindow, Ui_MainWindow):
         self.btn_ingreso_login.clicked.connect(self.login)
         
         if self.controller.checkUser():
-            self.loadWithUser(self.controller.user.modeluser.user_name)
-            self.user_in.setText(self.controller.user.modeluser.user_name)
+            self.loadWithUser(self.controller.user.usermodel.user_name)
+            self.user_in.setText(self.controller.user.usermodel.user_name)
         else:
             self.loadWithOutUser()
 
@@ -117,15 +117,27 @@ class Login(QMainWindow, Ui_MainWindow):
         psw = self.pass_in.text()
 
         # validar campos de entrada aqui...
+        userCorrect, msgUser = self.controller.view.validUserField.isUsernameCorrect(user)
+        passCorrect1, msgPass1 = self.controller.view.validUserField.checkLength(len(psw))
+        passCorrect2, msgPass2 = self.controller.view.validUserField.isPasswordCorrect(psw)
+        
+        if not userCorrect:
+            print(msgUser)
+            return
+        if not passCorrect1:
+            print(msgPass1)
+            return
+        if not passCorrect2:
+            print(msgPass2)
+            return
+
         if not self.controller.checkUser():
-            print('No hay usuario, entonces lo creo.')
             self.controller.user.signup(user, psw)
+            self.openMain()
+            return
         
         if self.controller.user.login(user, psw):
-            print('Abriendo Main')
-            self.main = MainApplication()
-            self.main.show()
-            self.close()
+            self.openMain()
         else:
             pass
 
@@ -138,10 +150,10 @@ class Login(QMainWindow, Ui_MainWindow):
         self.user_in.hide()
         self.label_3.hide()
 
-    # def abrirVentanaPrincipal(self):
-    #     self.main = MainApplication()
-    #     self.main.show()
-    #     self.close()
+    def openMain(self):
+        self.main = MainApplication()
+        self.main.show()
+        self.close()
     
 
 

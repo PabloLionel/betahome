@@ -21,16 +21,18 @@ class Model:
         else:
             allUser = self.driver.selectAll(
                 UserModel.name_table(),
-                ['name_user', 'password', 'salary']
+                ['user_name', 'password', 'salary']
             )
             return UserModel(*allUser[-1])
             
     def existingTable(self, tname_table):
-        self.driver.runQuery(Query(
+        resultQuery = self.driver.runQuery(Query(
             f"SELECT name FROM sqlite_master WHERE type='table' AND name='{tname_table}';",
             get_all=False,
             save=False
         ))
+        return bool(resultQuery)
+        
 
 def main():
     print(UserModel.name_table())

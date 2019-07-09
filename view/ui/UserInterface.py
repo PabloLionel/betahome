@@ -7,24 +7,33 @@
 # 
 #######################################################
 from controllers.UserChangeObserver import UserChangeObserver
+import re
 
 class UserInterface:
+    MAX_PASSWORD = 20
+    MIN_PASSWORD = 8
+
     def checkLength(length):
         """checkLength(length: int): bool
         """
-        pass
-
-    def suggest(idseggest):
-        """suggest(idseggest: str): str
-        """
-        pass
+        return UserInterface.MIN_PASSWORD <= length <= UserInterface.MAX_PASSWORD, UserInterface.suggest(1)
 
     def isPasswordCorrect(pwd):
         """isPasswordCorrect(pwd: str): bool
         """
-        pass
+        return bool(pwd) and isinstance(pwd, str) and re.match(r"\w", pwd), UserInterface.suggest(2)
 
     def isUsernameCorrect(username):
         """isUsernameCorrect(username: str): bool
         """
-        pass
+        return bool(username) and isinstance(username, str) and not bool(re.findall(r"[^\w\-\_]", username)), UserInterface.suggest(3)
+
+    def suggest(idseggest):
+        """suggest(idseggest: int): str
+        """
+        msg = {
+            1: "Revise la longitud del password.",
+            2: "Los caracteres especiales son invalidos.",
+            3: "Se permiten letras, numeros y los caracteres especiales '_' y '-'."
+        }
+        return msg.get(idseggest)
