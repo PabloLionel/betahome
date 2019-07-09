@@ -9,13 +9,13 @@
 from controllers.UserChangeObserver import UserChangeObserver
 
 class UserInterface:
-    def __checlLength(length):
-        """__checlLength(length: var): bool
+    def checkLength(length):
+        """checkLength(length: int): bool
         """
         pass
 
-    def __suggest(idseggest):
-        """__suggest(idseggest: str): str
+    def suggest(idseggest):
+        """suggest(idseggest: str): str
         """
         pass
 

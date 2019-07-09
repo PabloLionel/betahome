@@ -1,10 +1,9 @@
-from .ui.Login import Login
+from view.ui.UserInterface import UserInterface
+
 class View:
 
     def __init__(self, *args, **kwargs):
-        self.user = None
-        # self.init()
+        self.validUser = UserInterface
     
-    def init(self, user):
-        # abrir login.
-        Login(user)
+    def init(self):
+        pass

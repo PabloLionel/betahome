@@ -6,12 +6,19 @@
 # Original author: Betacode
 # 
 #######################################################
-from .UserController import UserController
+from controllers.UserController import UserController
 
 class BetahomeCoreController:
 
     def __init__(self, view, model):
+        # A diferencia de otras objetos
+        # el controlador conoce a la vista
+        # y el modelo.
         self.view = view
+        self.model = model
+        # de aquí en más, al igual que las demas
+        # entidades se instancian sus propios objetos
+        # a manejar.
         self.user = UserController(model.user)
 
     def checkUser(self):
@@ -21,10 +28,5 @@ class BetahomeCoreController:
         pass
 
     def open(self):
-        if self.checkUser():
-            self.view.init(False, self.user)
-        else:
-            self.view.init(True, self.user)
+        pass
 
-    # def getUserData(self, *args, **kwargs):
-    #     pass

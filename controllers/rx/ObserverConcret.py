@@ -6,10 +6,6 @@
 # Original author: Betacode
 # 
 #######################################################
-# para volver una carpeta atras, de lo contrario no veiramos a controllers
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.abspath('')))
 import re
 from Subject import Subject, checksubject
 from SubjectConcret import SubjectConcret

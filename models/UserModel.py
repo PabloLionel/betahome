@@ -23,23 +23,19 @@ class UserModel(DataAccessObject):
         self.user_name = name
         self.password = pwd
         self.salary = salary
-        self.id = self.__getId(name, password)
+        self.id = self.__getId(name, pwd)
     
     def name_table():
         return 'user'
 
     def __getId(self, user_name, password):
-            res = self.driver.selectAll(
-                UserModel.name_table(),
-                ['id','user_name', 'password'],
-                'user_name',    # columna a comparar
-                user_name       # valor item a filtrar
-            )
+            res = self.find()
+            id = None
             for r in res:
-                id, _, pwd = r
+                id, _, pwd, _ = r
                 if password == pwd:
                     break
-            if id:
+            if id != None:
                 return id
             else:
                 # a futuro usar loggin.info_warn
@@ -59,11 +55,12 @@ class UserModel(DataAccessObject):
             )
         )
 
-    def create(self, ):
+    def create(self):
+        print(self.__dict__)
         if self.id == None:
             super().create(
                 UserModel.name_table(),
-                id='rowid',                 # POR SER AUTOINCREMENTAL.
+                # id=...,                 # POR SER AUTOINCREMENTAL.
                 user_name=self.user_name,
                 password=self.password,
                 salary=self.salary,
@@ -75,7 +72,7 @@ class UserModel(DataAccessObject):
             self.create()
         else:
             super().update(
-                UserModel.name_table(),            # nombre de la tabla
+                UserModel.name_table(),     # nombre de la tabla
                 'id',                       # columna a comparar
                 self.id,                    # item a comparar
                 user_name=self.user_name,   # campos a actualizar:
@@ -83,32 +80,23 @@ class UserModel(DataAccessObject):
                 salary=self.salary,
             )
 
-    def find(self, filter=None):
+    def find(self, pfilter=None):
         if pfilter:
             return super().find(UserModel.name_table(), pfilter)
         else:
             return super().find(UserModel.name_table())
         
-
     def delete(self ):
         if self.id == None:
             self.id = self.__getId(self.user_name, self.password)
         super().delete(UserModel.name_table(), id=self.id)
 
-
     def isRegisterUser(self, nameuser):
         """+ isRegisterUser(nameuser: str): bool
         """
         pass
-
-    def singUp(self):
-        pass
-
     
-    def __str__(self):
-        return ":D"
-
 
 if __name__ == "__main__":
     user = UserModel(name="Pablo", pwd="1234", salary=100000) # jeje :D
-    print(":) --->", str(user))
+    

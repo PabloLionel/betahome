@@ -6,10 +6,6 @@
 # Original author: Betacode
 # 
 #######################################################
-# para volver una carpeta atras, de lo contrario no veiramos a controllers
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.abspath('')))
 from Subject import Subject
 
 class SubjectConcret(Subject):
@@ -21,6 +17,7 @@ class SubjectConcret(Subject):
     @property
     def count(self):
         return self.__count
+
     @count.setter
     def count(self, c):
         self.__count = c

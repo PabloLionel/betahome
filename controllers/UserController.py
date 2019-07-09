@@ -7,18 +7,27 @@
 # 
 #######################################################
 from .rx.Subject import Subject
+from models.UserModel import UserModel
 
 class UserController(Subject):
-
+    __usermodel = None
     def __init__(self, user=None):
         self.usermodel = user
+
+    @property
+    def usermodel(self):
+        return self.__usermodel
+
+    @usermodel.setter
+    def usermodel(self, m):
+        self.__usermodel = m
+        self.notify()
 
     def create(self): # crear
         if not self.usermodel:
             self.usermodel.create()
 
     def update(self): # actualizar
-        
         self.usermodel.update()
 
     def find(self,filter=lambda x: x): # leer
@@ -27,8 +36,12 @@ class UserController(Subject):
     def delete(self): # eliminar
         self.usermodel.delete()
 
-    def login(self):
-        pass
+    def signup(self, name, psw, salary=0):
+        self.usermodel = UserModel(name, psw, salary)
+        self.usermodel.create()
+
+    def login(self, name, psw):
+        return self.usermodel.password == psw
 
     def logout(self):
         pass

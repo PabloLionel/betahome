@@ -6,16 +6,21 @@
 # Original author: Betacode
 # 
 #######################################################
-from controllers.BetahomeCoreController import BetahomeCoreController
+from controllers.BetahomeCoreController import (
+    BetahomeCoreController
+)
 from view.view import View
+from view.ui.windows.login import login
 from models.models import Model
 
 def main():
-    # MyClass(new View(), new Model())
     core = BetahomeCoreController(
         View(),
         Model()
     )
     core.open()
+    login(sys, core)
+
 if __name__ == "__main__":
+    import sys
     main()

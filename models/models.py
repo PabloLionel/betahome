@@ -1,7 +1,8 @@
 try:
-    from .dao import DataAccessObject
-    from .UserModel import UserModel
-    from .db.DriverDB import DriverDB
+    from models.dao import DataAccessObject
+    from models.UserModel import UserModel
+    from models.db.DriverDB import DriverDB
+    from models.db.Query import Query
 except:
     from dao import DataAccessObject
     from UserModel import UserModel

@@ -1,5 +1,4 @@
 from sqlite3 import InternalError
-
 try:
     from .IDao import IDataAccessObject
     from .db.DriverDB import DriverDB, sq3
@@ -44,7 +43,7 @@ class DataAccessObject(IDataAccessObject):
             )
         )
     
-    def find(self, table_name, pfilter=lambda x: x):
+    def find(self, table_name, pfilter=lambda *a: True):
         self.checkTable(table_name)
         return list(
             filter(
@@ -81,7 +80,7 @@ if __name__ == "__main__":
                 many=True,
                 get_all=False
             )
-    print(q.__dict__)
+    # print(q.__dict__)
     # demo:
     class DemoDAO(DataAccessObject):
         def __init__(self, user_name, password, salary, *args, **kwargs):
@@ -99,15 +98,14 @@ if __name__ == "__main__":
         def __getId(self, user_name, password):
             res = self.driver.selectAll(
                 self.name_table,
-                ['id','user_name', 'password'],
-                'user_name',    # columna a comparar
-                user_name       # valor item a filtrar
+                ['id','user_name', 'password']
             )
+            id = None
             for r in res:
                 id, _, pwd = r
                 if password == pwd:
                     break
-            if id:
+            if id != None:
                 return id
             else:
                 # a futuro usar loggin.info_warn
@@ -129,7 +127,7 @@ if __name__ == "__main__":
         def create(self):
             if self.id == None:
                 super().create(self.name_table,
-                    id='rowid', # POR SER AUTOINCREMENTAL.
+                    # id='rowid', POR SER AUTOINCREMENTAL.
                     user_name=self.user_name,
                     password=self.password,
                     salary=self.salary,
@@ -160,16 +158,39 @@ if __name__ == "__main__":
         def show(self):
             print(self.__dict__)
 
-        
+    def myFiltro(unaTupla):
+        # print(unaTupla)
+        _, name, _, _ = unaTupla
+        if name == 'Pablo':
+            return False
+        else:
+            return True
     
-    user = DemoDAO('Pablo', '123456', 10000.55)
+    user1 = DemoDAO('Pablo', '123456', 10000.55)
+    user2 = DemoDAO('Yhael', '654321', 20000.00)
+    user3 = DemoDAO('Nahuel', '321654', 1000.50)
+    user1
+    print()
+    user1.checkTable('user')
+    user1.show()
+
+    print()
+    user1.create()
+    user2.create()
+    user3.create()
+    user1.show()
+
+    print()
     
-    print(dao.checkTable('user'))
-    dao.show()
+    print("Reultado del  Filtro: ", user1.find(myFiltro))
+
+    print()
     
-    print(dao.create())
-    dao.show()
-    
-    dao.user_name = 'Lionel'
-    print(dao.update())
-    dao.show()
+    user1.user_name = 'Lionel'
+    user1.update()
+    user1.show()
+    print()
+
+    print(user1.driver.selectAll(user1.name_table))
+    user1.delete()
+    print(user1.driver.selectAll(user1.name_table))
