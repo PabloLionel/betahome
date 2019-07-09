@@ -143,7 +143,6 @@ class Login(QMainWindow, Ui_MainWindow):
 
     def loadWithOutUser(self):
         self.Label_bienvenida.hide()
-        # return (self.user_in.text, self.pass_in.text)
 
     def loadWithUser(self, name):
         self.Label_bienvenida.setText(name)
