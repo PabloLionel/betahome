@@ -25,7 +25,7 @@ class DataAccessObject(IDataAccessObject):
 
     def create(self, table_name, *args, **kwargs): # cambiar por insert_crreate.
         self.checkTable(table_name)
-        self.driver.runQuery(
+        return self.driver.runQuery(
             Query(
                 f'INSERT INTO {table_name} (' + ','.join(kwargs.keys()) + ') VALUES (' + ','.join(['?' for _ in kwargs]) + ')',
                 data=tuple(kwargs.values()),
@@ -36,7 +36,7 @@ class DataAccessObject(IDataAccessObject):
     
     def update(self, table_name, column_compare, item, *args, **kwargs):
         self.checkTable(table_name)
-        self.driver.runQuery(
+        return self.driver.runQuery(
             Query(
                 f'UPDATE {table_name} SET ' + ','.join([k + '=?' for k in kwargs]) + f' WHERE {column_compare}={item}',
                 data=tuple(kwargs.values()),
@@ -59,7 +59,7 @@ class DataAccessObject(IDataAccessObject):
             column=k
             item=v
             break
-        self.driver.runQuery(
+        return self.driver.runQuery(
             Query(
                 f'DELETE FROM {table_name} WHERE {column}=?',
                 data=(item,),

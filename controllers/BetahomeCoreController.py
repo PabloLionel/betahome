@@ -7,6 +7,7 @@
 # 
 #######################################################
 from controllers.UserController import UserController
+from controllers.CategoryController import CategoryController
 
 class BetahomeCoreController:
 
@@ -20,6 +21,7 @@ class BetahomeCoreController:
         # entidades se instancian sus propios objetos
         # a manejar.
         self.user = UserController(model.user)
+        self.category = CategoryController(model.category)
 
     def checkUser(self):
         return bool(self.user.usermodel)

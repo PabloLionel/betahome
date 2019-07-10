@@ -42,8 +42,8 @@ class UserModel(DataAccessObject):
         self.driver.runQuery(
             Query(
                 f"""
-                CREATE TABLE IF NOT EXISTS {UserModel.name_table()}(
-                    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                CREATE TABLE IF NOT EXISTS {UserModel.name_table()} (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                     user_name VARCHAR (20) NOT null UNIQUE,
                     password VARCHAR (16) NOT null,
                     salary FLOAT
@@ -53,7 +53,6 @@ class UserModel(DataAccessObject):
         )
 
     def create(self):
-        print(self.__dict__)
         if self.id == None:
             super().create(
                 UserModel.name_table(),
