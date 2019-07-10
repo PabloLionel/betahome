@@ -3,6 +3,7 @@ try:
     from models.db.DriverDB import DriverDB
     from models.db.Query import Query
     from models.UserModel import UserModel
+    from models.CategoryModel import CategoryModel
 except:
     from dao import DataAccessObject
     from db.DriverDB import DriverDB

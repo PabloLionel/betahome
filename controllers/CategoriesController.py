@@ -6,12 +6,11 @@
 # Original author: Betacode
 # 
 #######################################################
-# from .rx.Subject import Subject
 
 class CategoriesController:
     __categoriesmodel = None
     def __init__(self, categories=None):
-        self.categoriesmodel = categories
+        self.__categoriesmodel = categories
 
     @property
     def categoriesmodel(self):
