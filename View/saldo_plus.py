@@ -24,6 +24,7 @@ class Ui_Form_saldo(object):
         self.widget_agregar_saldo.setObjectName("widget_agregar_saldo")
         self.pushButton_aceptar_ingreso_saldo = QtWidgets.QPushButton(self.widget_agregar_saldo)
         self.pushButton_aceptar_ingreso_saldo.setGeometry(QtCore.QRect(80, 200, 75, 25))
+        self.pushButton_aceptar_ingreso_saldo.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_aceptar_ingreso_saldo.setStyleSheet("background-color: #6b778d;\n"
 "border-radius: 6px;\n"
 "font: 87 8pt \"Roboto Black\";\n"
@@ -31,6 +32,7 @@ class Ui_Form_saldo(object):
         self.pushButton_aceptar_ingreso_saldo.setObjectName("pushButton_aceptar_ingreso_saldo")
         self.pushButton_cancelar_ingreso_saldo = QtWidgets.QPushButton(self.widget_agregar_saldo)
         self.pushButton_cancelar_ingreso_saldo.setGeometry(QtCore.QRect(195, 200, 75, 25))
+        self.pushButton_cancelar_ingreso_saldo.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_cancelar_ingreso_saldo.setStyleSheet("border-radius: 6px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "font: 87 8pt \"Roboto Black\";\n"
@@ -77,12 +79,6 @@ class Ui_Form_saldo(object):
         self.checkBox_sueldo.setGeometry(QtCore.QRect(140, 160, 70, 17))
         self.checkBox_sueldo.setStyleSheet("font: 25 10pt \"Roboto Thin\";")
         self.checkBox_sueldo.setObjectName("checkBox_sueldo")
-        self.label_ingreso_incorrecto_saldo = QtWidgets.QLabel(self.widget_saldo_mas)
-        self.label_ingreso_incorrecto_saldo.setGeometry(QtCore.QRect(0, 130, 331, 20))
-        self.label_ingreso_incorrecto_saldo.setStyleSheet("font: 25 10pt \"Roboto Light\";\n"
-"color:  rgb(255, 103, 104);")
-        self.label_ingreso_incorrecto_saldo.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_ingreso_incorrecto_saldo.setObjectName("label_ingreso_incorrecto_saldo")
         self.widget.raise_()
         self.widget_saldo_mas.raise_()
         self.pushButton_aceptar_ingreso_saldo.raise_()
@@ -99,7 +95,6 @@ class Ui_Form_saldo(object):
         self.campo_ingreso_saldo.setPlaceholderText(_translate("Form_saldo", "$00000.00"))
         self.label.setText(_translate("Form_saldo", "Ingresá un monto"))
         self.checkBox_sueldo.setText(_translate("Form_saldo", "Sueldo"))
-        self.label_ingreso_incorrecto_saldo.setText(_translate("Form_saldo", "* Ingresá un monto válido!"))
 
 
 

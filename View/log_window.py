@@ -137,15 +137,6 @@ class Ui_MainWindow(object):
         self.label_4.setScaledContents(True)
         self.label_4.setIndent(0)
         self.label_4.setObjectName("label_4")
-        self.label_error_ingreso = QtWidgets.QLabel(self.login_frame)
-        self.label_error_ingreso.setGeometry(QtCore.QRect(85, 295, 250, 20))
-        self.label_error_ingreso.setStyleSheet("background-color: transparent;\n"
-"font: 25 10pt \"Roboto Light\";\n"
-"color: rgb(255, 103, 104);")
-        self.label_error_ingreso.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_error_ingreso.setWordWrap(False)
-        self.label_error_ingreso.setIndent(0)
-        self.label_error_ingreso.setObjectName("label_error_ingreso")
         self.label_2.raise_()
         self.user_in.raise_()
         self.label.raise_()
@@ -154,7 +145,6 @@ class Ui_MainWindow(object):
         self.btn_ingreso_login.raise_()
         self.label_3.raise_()
         self.label_4.raise_()
-        self.label_error_ingreso.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -167,7 +157,6 @@ class Ui_MainWindow(object):
         self.pass_in.setPlaceholderText(_translate("MainWindow", "Ingresa tu contraseña"))
         self.btn_ingreso_login.setText(_translate("MainWindow", "Ingresar"))
         self.user_in.setPlaceholderText(_translate("MainWindow", "Ingresa tu nombre"))
-        self.label_error_ingreso.setText(_translate("MainWindow", "* Nombre y/o contraseña incorrectos"))
 
 
 

@@ -110,6 +110,7 @@ class Ui_agregar_cuenta(object):
         self.comboBox_cant_cuotas.setObjectName("comboBox_cant_cuotas")
         self.pushButton_list_ingreso_cuenta = QtWidgets.QPushButton(self.widget_saldo_mas)
         self.pushButton_list_ingreso_cuenta.setGeometry(QtCore.QRect(230, 240, 81, 25))
+        self.pushButton_list_ingreso_cuenta.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_list_ingreso_cuenta.setStyleSheet("background-color: #6b778d;\n"
 "border-radius: 6px;\n"
 "font: 87 8pt \"Roboto Black\";\n"
@@ -122,7 +123,7 @@ class Ui_agregar_cuenta(object):
 
     def retranslateUi(self, agregar_cuenta):
         _translate = QtCore.QCoreApplication.translate
-        agregar_cuenta.setWindowTitle(_translate("agregar_cuenta", "Dialog"))
+        agregar_cuenta.setWindowTitle(_translate("agregar_cuenta", "Ingreso de cuenta"))
         self.label.setText(_translate("agregar_cuenta", "Ingresá una nueva cuenta"))
         self.label_2.setText(_translate("agregar_cuenta", "Categoría:"))
         self.label_3.setText(_translate("agregar_cuenta", "Nombre:"))
