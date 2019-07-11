@@ -2,15 +2,17 @@
 # 
 # CategoriesController.py
 # Python implementation of the Class CategoriesController
-# Created on:      10-jul.-2019 23:21:39
+# Created on:      09-jul.-2019 23:21:39
 # Original author: Betacode
 # 
 #######################################################
 
 class CategoriesController:
     __categoriesmodel = None
+    __expenses = None
     def __init__(self, categories=None):
         self.__categoriesmodel = categories
+        self.__expenses = self.loadExpenses()
 
     @property
     def categoriesmodel(self):
@@ -19,8 +21,15 @@ class CategoriesController:
     @categoriesmodel.setter
     def categorymodel(self, m):
         self.__categoriesmodel = m
-        self.notify()
 
+    @property
+    def expenses(self):
+        return self.__expenses
+
+    @expenses.setter
+    def expenses(self, m):
+        self.__expenses = m
+    
     def create(self): # crear
         if not self.categoriesmodel:
             self.categoriesmodel.create()
@@ -33,3 +42,9 @@ class CategoriesController:
 
     def delete(self): # eliminar
         self.categoriesmodel.delete()
+    
+    def loadExpenses(self):
+        # pedir al modelo los items de esta
+        # categoria... e instanciar sus
+        # controladores.
+        pass 

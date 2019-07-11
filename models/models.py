@@ -18,22 +18,27 @@ class Model:
         self.categories = self.getCategories()
     
     def getCategories(self):
-        categories = list()
-        if self.existingTable(CategoryModel.name_table()):
-            allCategories = self.driver.selectAll(CategoryModel.name_table())
-            for c in allCategories:
-                categories.append(CategoryModel(*c))
-        else:
-            firstCategory = CategoryModel(id=1, name="Servicios", total=0)
-            categories + [
-                firstCategory,
-                CategoryModel(id=2, name="Salud", total=0),
-                CategoryModel(id=3, name="Inmuebles", total=0),
-                CategoryModel(id=4, name="Alimentos", total=0),
-                CategoryModel(id=5, name="Otros", total=0),
-            ]
+        categories = list() 
+        # nos aseguramos de crar la tabla
+        firstCategory = CategoryModel(name="Servicios", total=0)
+        # instanciamos las demas categorias:
+        categories += [
+            firstCategory,
+            CategoryModel(name="Salud", total=0),
+            CategoryModel(name="Inmuebles", total=0),
+            CategoryModel(name="Alimentos", total=0),
+            CategoryModel(name="Otros", total=0),
+        ]
+        # consultamos en la base de datos si estan guardadas
+        allCategories = self.driver.selectAll(CategoryModel.name_table())
+        if not allCategories:
+            # las cargamos a la base de datos:
             for c in categories:
+                print(f"cargando categoria: {c.name}")
                 c.create()
+        
+        allCategories = self.driver.selectAll(CategoryModel.name_table())
+
         return categories
     
     def getUser(self):

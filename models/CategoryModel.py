@@ -2,7 +2,7 @@
 # 
 # CategoryModel.py
 # Python implementation of the Class CategoryModel
-# Created on:      10-jul.-2019 23:00:39
+# Created on:      09-jul.-2019 23:00:39
 # Original author: Betacode
 # 
 #######################################################
@@ -14,10 +14,10 @@ except:
     from db.Query import Query
 
 class CategoryModel(DataAccessObject):
-    def __init__(self, id, name, total, *args, **kwargs):
+    def __init__(self, name, total, *args, **kwargs):
         DataAccessObject.__init__(self)
         self.init()
-        self.id = id
+        self.id = 5                     # La categoria otros esta por defecto.
         self.name = name
         self.total = total
 
@@ -31,26 +31,23 @@ class CategoryModel(DataAccessObject):
                 CREATE TABLE IF NOT EXISTS {CategoryModel.name_table()} (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name VARCHAR(30) UNIQUE,
-                    total float
+                    total FLOAT
                 )
                 """
             )
         )
 
     def create(self):
-        if self.id == None:
-            res = super().create(
-                CategoryModel.name_table(),
-                # id=...,                 # POR SER AUTOINCREMENTAL.
-                name=self.name,
-                total=self.total,
-            )
-            print(res)
-        return res
+        return super().create(
+            CategoryModel.name_table(),
+            # id=...,                   # POR SER AUTOINCREMENTAL.
+            name=self.name,
+            total=self.total,
+        )
 
     def update(self):
         res = super().update(
-            CategoryModel.name_table(),     # nombre de la tabla
+            CategoryModel.name_table(), # nombre de la tabla
             'id',                       # columna a comparar
             self.id,                    # item a comparar
             name=self.name,
@@ -66,7 +63,7 @@ class CategoryModel(DataAccessObject):
             return super().find(CategoryModel.name_table())
 
     def delete(self ):
-        if self.id != None:
+        if self.id != 5:                # La categoria otros no puede ser eliminada.
             return super().delete(CategoryModel.name_table(), id=self.id)
 
 if __name__ == "__main__":

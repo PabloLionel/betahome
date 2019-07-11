@@ -44,6 +44,18 @@ class DataAccessObject(IDataAccessObject):
             )
         )
     
+    def updateWithCompositeKey(self, table_name, columns_to_compare_items, *args, **kwargs):
+        self.checkTable(table_name)
+        return self.driver.runQuery(
+                f"""UPDATE {table_name} SET {','.join([k + '=?' for k in kwargs])}
+                WHERE {' AND '.join([k + '=' + str(v) for k, v in columns_to_compare_items.items()])}
+                """,
+            Query(
+                data=tuple(kwargs.values()),
+                get_all=False
+            )
+        )
+    
     def find(self, table_name, pfilter=lambda *a: True):
         self.checkTable(table_name)
         return list(
@@ -67,6 +79,26 @@ class DataAccessObject(IDataAccessObject):
                 get_all=False
             )
         )
+    
+    def deleteWithCompositeKey(self, table_name, columns_to_compare_items):
+        self.checkTable(table_name)
+        d = dict()
+        for k, v in columns_to_compare_items.items():
+            d.update({k:v})
+        where = ' AND '.join([k + '=' + str(v) for k, v in d.items()])
+        return self.driver.runQuery(
+            Query(
+                f'DELETE FROM {table_name} WHERE {where}',
+                save=True,
+                get_all=False
+            )
+        )
+    def lastRegister(self, name_table):
+        return super().runQuery(Query(
+            f'SELECT * FROM {name_table} ORDER BY ROWID DESC LIMIT 1',
+            save=False,
+            get_all=False
+        ))
 
 
 if __name__ == "__main__":

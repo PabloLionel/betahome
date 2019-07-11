@@ -34,9 +34,10 @@ class UserModel(DataAccessObject):
                     break
             if id != None:
                 return id
+                print('[INFO] Usuario encontrado, cargando usuario...')
             else:
                 # a futuro usar loggin.info_warn
-                print('[WARN] Id no encontrado, clave incorrecta.')
+                print('[WARN] Id no encontrado, clave incorrecta o no cargada aun.')
 
     def init(self):
         self.driver.runQuery(
