@@ -1,4 +1,5 @@
 import sys
+import re
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QDialog
 from PyQt5.QtWidgets import *
@@ -8,6 +9,7 @@ from .main_window import Ui_Form
 from .log_window import Ui_MainWindow
 from .agregar_cuenta_indi import Ui_agregar_cuenta
 from .saldo_plus import Ui_Form_saldo
+from tablaSavesBD import ConexionSaves
 
 
 class MainApplication(QMainWindow, Ui_Form):
@@ -24,13 +26,14 @@ class MainApplication(QMainWindow, Ui_Form):
 		self.pushButton_Ayuda.clicked.connect(self.cambiarColorAyuda)
 		self.pushButton_ing_cuenta_nueva.clicked.connect(self.abrir_vent_cuenta)
 		self.pushButton_agregar_saldo.clicked.connect(self.abrir_ventana_saldo)
+		self.inicio_frame.raise_()
 
 	def abrir_vent_cuenta(self):
 		self.menu = AddCuenta()
 		self.menu.show()
 
 	def abrir_ventana_saldo(self):
-		self.menu = AddSaldo()
+		self.menu = AddSaldo(self)
 		self.menu.show()
 
 	def cambiarColorInicio(self):
@@ -91,6 +94,38 @@ class AddSaldo(QMainWindow, Ui_Form_saldo):
 	def __init__(self, parent = None):
 		super(AddSaldo, self).__init__(parent)
 		self.setupUi(self)
+	
+		self.pushButton_aceptar_ingreso_saldo.clicked.connect(self.entradaSaldo)
+		self.pushButton_cancelar_ingreso_saldo.clicked.connect(self.cancelar)
+
+
+	def entradaSaldo(self):
+		entrada = self.campo_ingreso_saldo.text()
+		if re.match("^\d+\.?(\d{1,2})$", entrada):
+			flotante = float(entrada)
+			saves= ConexionSaves()
+			saves.crearTablaSaves()
+			saves.actualizarTablaSave(flotante)
+                        
+			flotante=saves.traerTotal()
+
+			self.parent().Label_Saldo.setText("%0.2f"%flotante)
+			self.close()
+
+	def cancelar(self):
+		eleccion = QMessageBox(self)
+		eleccion.setWindowTitle('Cancelar')
+		eleccion.setText('¿Desea cancelar el ingreso?')
+		eleccion.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+		buttonY = eleccion.button(QMessageBox.Yes)
+		buttonY.setText('Si')
+		buttonN = eleccion.button(QMessageBox.No)
+		buttonN.setText('No')
+		eleccion.exec_()
+
+		if eleccion.clickedButton() == buttonY:
+			self.close()
+
 
 
 class Login(QMainWindow, Ui_MainWindow):
@@ -102,6 +137,7 @@ class Login(QMainWindow, Ui_MainWindow):
         self.initUI()
     
     def initUI(self):
+        self.label_error_ingreso.hide()
         self.btn_ingreso_login.clicked.connect(self.login)
         
         if self.controller.checkUser():
@@ -123,11 +159,17 @@ class Login(QMainWindow, Ui_MainWindow):
         
         if not userCorrect:
             print(msgUser)
+            self.label_error_ingreso.setText(msgUser)
+            self.label_error_ingreso.show()
             return
         if not passCorrect1:
             print(msgPass1)
+            self.label_error_ingreso.setText(msgPass1)
+            self.label_error_ingreso.show()
             return
         if not passCorrect2:
+            self.label_error_ingreso.setText(msgPass2)
+            self.label_error_ingreso.show()
             print(msgPass2)
             return
 

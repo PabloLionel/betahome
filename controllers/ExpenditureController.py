@@ -10,7 +10,7 @@
 class ExpenditureController:
     __expenditure = None
     def __init__(self):
-        self.__expenditure = list()
+        self.__expenditure = None
 
     @property
     def expenditure(self):

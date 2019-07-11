@@ -16,12 +16,13 @@ except:
 
 class ExpenditureModel(DataAccessObject):
     
-    def __init__(self, name, expenditure, idcategory=5, *args, **kwargs):
+    def __init__(self, name, expenditure, estate="a pagar", idexpenditure = None, idcategory=5, *args, **kwargs):
         DataAccessObject.__init__(self)
         self.init()
         self.idcategory = idcategory
-        self.idexpenditure = None
+        self.idexpenditure = idexpenditure
         self.name = name
+        self.estate = estate # pagado / a pagar
         self.expenditure = expenditure
         self.date = self.now()
 
@@ -33,13 +34,14 @@ class ExpenditureModel(DataAccessObject):
             Query(
                 f"""
                 CREATE TABLE IF NOT EXISTS {ExpenditureModel.name_table()} (
-                    id	INTEGER DEFAULT 5,
-                    idexpenditure	INTEGER,
-                    name	TEXT NOT NULL,
-                    expenditure	FLOAT NOT NULL,
-                    date	TEXT,
+                    id	                            INTEGER DEFAULT 5,
+                    idexpenditure	                INTEGER,
+                    name	                        TEXT NOT NULL,
+                    expenditure	                    FLOAT NOT NULL,
+                    estate	                        TEXT,
+                    date	                        TEXT,
                     PRIMARY KEY(id,idexpenditure),
-                    FOREIGN KEY(id) REFERENCES category(id) RESTRICT SET DEFAULT
+                    FOREIGN KEY(id)                 REFERENCES category(id) ON UPDATE SET DEFAULT
                 );
                 """
             )
@@ -51,6 +53,7 @@ class ExpenditureModel(DataAccessObject):
             idcategory=self.id,
             # idexpenditure=...,    # POR SER AUTOINCREMENTAL.
             name=self.name,
+            estate=self.estate,
             expenditure=self.expenditure,
             date=self.date
         )
@@ -64,6 +67,7 @@ class ExpenditureModel(DataAccessObject):
                 ExpenditureModel.name_table(),
                 {'id': self.idcategory, 'idexpenditure': self.idexpenditure},
                 name=self.name,
+                estate=self.estate,
                 expenditure=self.expenditure,
                 date=self.date
             )
@@ -78,10 +82,13 @@ class ExpenditureModel(DataAccessObject):
         if self.id != None and self.idexpenditure != None:
             return super().deleteWithCompositeKey(
                 ExpenditureModel.name_table(),
-                {'id':self.id, , 'idexpenditure': self.idexpenditure}
+                {'id':self.id, 'idexpenditure': self.idexpenditure}
             )
+    
+    def getAllRegisters(self):
+        return self.driver.selectAll(ExpenditureModel.name_table())
 
-    def now():
+    def now(self):
         """
         Este metodo obtiene la fecha actual (YYYY-MM-DD).
 

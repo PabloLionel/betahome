@@ -6,10 +6,13 @@
 # Original author: Betacode
 # 
 #######################################################
+from .ExpenditureController import ExpenditureController
+from models.ExpenditureModel import ExpenditureModel
 
 class CategoriesController:
     __categoriesmodel = None
     __expenses = None
+    __expenditure = ExpenditureModel(None, None)
     def __init__(self, categories=None):
         self.__categoriesmodel = categories
         self.__expenses = self.loadExpenses()
@@ -47,4 +50,17 @@ class CategoriesController:
         # pedir al modelo los items de esta
         # categoria... e instanciar sus
         # controladores.
-        pass 
+        expenses = list()
+
+        registers = self.__expenditure.getAllRegisters()
+        
+        for reg in registers:
+            rid, ridexpenditure, rname, rexpenditure, restate, rdate = reg
+            exp = ExpenditureModel(rname, rexpenditure)
+            exp.idcategory=rid
+            idexpenditure=ridexpenditure
+            estate=restate
+            exp.date=rdate
+            expenses.append(ExpenditureController(exp))
+        
+

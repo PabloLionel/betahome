@@ -114,7 +114,7 @@ if __name__ == "__main__":
                 get_all=False
             )
     # print(q.__dict__)
-    # demo:
+    # demo DAO:
     class DemoDAO(DataAccessObject):
         def __init__(self, user_name, password, salary, *args, **kwargs):
             DataAccessObject.__init__(self)
